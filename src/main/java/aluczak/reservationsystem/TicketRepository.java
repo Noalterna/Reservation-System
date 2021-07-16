@@ -1,0 +1,9 @@
+package aluczak.reservationsystem;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource(exported = false)
+public interface TicketRepository extends CrudRepository<Ticket, Long> {
+    public Ticket findByType(String type);
+}
